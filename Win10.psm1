@@ -3462,10 +3462,21 @@ Function DisableXboxFeatures {
 	DisableXboxFeatures -AllUsers
 }
 
+Function MyUninstallHPPreinstalledPrograms {
+	Write-Output "Uninstalling HP Preinstalled Programs..."
+	$MyApp = Get-WmiObject -Class Win32_Product | Where-Object{$_.Name -eq "HP Client Security Manager"}
+	$MyApp.Uninstall()
+	$MyApp = Get-WmiObject -Class Win32_Product | Where-Object{$_.Name -eq "HP JumpStart Bridge"}
+	$MyApp.Uninstall()
+	$MyApp = Get-WmiObject -Class Win32_Product | Where-Object{$_.Name -eq "HP JumpStart Launch"}
+	$MyApp.Uninstall()
+	$MyApp = Get-WmiObject -Class Win32_Product | Where-Object{$_.Name -eq "HP Sure Click"}
+	$MyApp.Uninstall()
+}
+
 ##########
 #endregion Irreversible Tweaks
 ##########
-
 
 
 ##########
