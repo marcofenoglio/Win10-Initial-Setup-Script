@@ -128,7 +128,7 @@ RequireAdmin
 #DisableF1HelpKey                # EnableF1HelpKey
 
 ### Explorer UI Tweaks ###
-# ShowExplorerTitleFullPath     # HideExplorerTitleFullPath
+ShowExplorerTitleFullPath     # HideExplorerTitleFullPath
 #ShowKnownExtensions             # HideKnownExtensions
 #ShowHiddenFiles                 # HideHiddenFiles
 # ShowSuperHiddenFiles          # HideSuperHiddenFiles
@@ -217,6 +217,7 @@ DisableXboxFeaturesAllUsers      # EnableXboxFeatures
 MyUninstallMsftBloatAllUsers
 MyUninstallThirdPartyBloatAllUsers
 MyUninstallHPPreinstalledPrograms
+SetPowerPlanToHighPerformance
 
 ### Auxiliary Functions ###
 WaitForKey

@@ -71,3 +71,8 @@ Function MyUninstallHPPreinstalledPrograms {
 	$MyApp.Uninstall()
 }
 
+# Set power plan to High Performance
+Function SetPowerPlanToHighPerformance {
+        Write-Output "Setting power plan to High Performance"
+        PowerCfg -SetActive '8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c'
+}
