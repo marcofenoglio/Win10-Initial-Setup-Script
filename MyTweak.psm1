@@ -48,6 +48,16 @@ function MyUninstallThirdPartyBloat {
 	Get-AppxPackage -AllUsers:$AllUsers "king.com.CandyCrushSaga" | Remove-AppxPackage -AllUsers:$AllUsers
 }
 
+# My Uninstall default Microsoft applications for all users - Note: This function has no counterpart.
+Function MyUninstallMsftBloatAllUsers {
+	MyUninstallMsftBloat -AllUsers
+}
+
+# My Uninstall default third party applications for all users - Note: This function has no counterpart.
+Function MyUninstallThirdPartyBloatAllUsers {
+	MyUninstallThirdPartyBloat -AllUsers
+}
+
 # My Uninstall HP Preinstalled Programs
 Function MyUninstallHPPreinstalledPrograms {
 	Write-Output "Uninstalling HP Preinstalled Programs..."
