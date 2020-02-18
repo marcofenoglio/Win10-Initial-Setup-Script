@@ -129,7 +129,7 @@ RequireAdmin
 
 ### Explorer UI Tweaks ###
 ShowExplorerTitleFullPath     # HideExplorerTitleFullPath
-#ShowKnownExtensions             # HideKnownExtensions
+ShowKnownExtensions             # HideKnownExtensions
 #ShowHiddenFiles                 # HideHiddenFiles
 # ShowSuperHiddenFiles          # HideSuperHiddenFiles
 # ShowEmptyDrives               # HideEmptyDrives
@@ -142,8 +142,8 @@ ShowExplorerTitleFullPath     # HideExplorerTitleFullPath
 # DisableSharingWizard          # EnableSharingWizard
 # HideSelectCheckboxes          # ShowSelectCheckboxes
 #HideSyncNotifications           # ShowSyncNotifications
-#HideRecentShortcuts             # ShowRecentShortcuts
-#SetExplorerThisPC               # SetExplorerQuickAccess
+HideRecentShortcuts             # ShowRecentShortcuts
+SetExplorerThisPC               # SetExplorerQuickAccess
 #HideQuickAccess                 # ShowQuickAccess
 # HideRecycleBinFromDesktop     # ShowRecycleBinOnDesktop
 #ShowThisPCOnDesktop             # HideThisPCFromDesktop
@@ -167,9 +167,10 @@ ShowExplorerTitleFullPath     # HideExplorerTitleFullPath
 # HideIncludeInLibraryMenu      # ShowIncludeInLibraryMenu
 # HideGiveAccessToMenu          # ShowGiveAccessToMenu
 # HideShareMenu                 # ShowShareMenu
-# DisableThumbnails             # EnableThumbnails
+DisableThumbnails             # EnableThumbnails
 #DisableThumbnailCache           # EnableThumbnailCache
 #DisableThumbsDBOnNetwork        # EnableThumbsDBOnNetwork
+MyEnableShowRibbon
 
 ### Application Tweaks ###
 #DisableOneDrive                 # EnableOneDrive

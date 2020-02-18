@@ -92,3 +92,14 @@ Function MySetIPAddress {
 	    Start-Sleep -Seconds 15
 	}
 }
+
+##########
+# Function from Boxstarter https://boxstarter.org/
+##########
+
+# Enable Windows Explorer to show the Ribbon menu so that it is always expanded
+# From Boxstarter.WinConfig/Set-WindowsExplorerOptions.ps1
+Function MyEnableShowRibbon {
+	Write-Output "Showing always Windows Explorer Ribbon menu..."
+	Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Ribbon" MinimizedStateTabletModeOff 0
+}
