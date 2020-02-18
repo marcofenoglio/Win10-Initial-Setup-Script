@@ -76,3 +76,19 @@ Function SetPowerPlanToHighPerformance {
         Write-Output "Setting power plan to High Performance"
         PowerCfg -SetActive '8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c'
 }
+
+# Set IP Address
+Function MySetIPAddress {
+	Write-Output "Configura la scheda di rete" -ForegroundColor red -BackgroundColor white
+	$IP = Read-Host "Indicare la parte finale dell'IP da assegnare alla rete 193.206.184.*/27?"
+	if ($IP -ne '') {
+	    New-NetIPAddress -IPAddress 193.206.184.$IP -DefaultGateway 193.206.184.254 -PrefixLength 27 -InterfaceIndex (Get-NetAdapter).InterfaceIndex
+	    Set-DNSClientServerAddress -InterfaceIndex (Get-NetAdapter).InterfaceIndex -ServerAddresses ("192.84.137.2","192.84.137.1")
+	}
+	Start-Sleep -Seconds 15
+	nslookup www.to.infn.it
+	$connected = Read-Host "In rete? [s|n]"
+	if ($connected -ne "s") {
+	    Start-Sleep -Seconds 15
+	}
+}

@@ -219,6 +219,8 @@ MyUninstallThirdPartyBloatAllUsers
 MyUninstallHPPreinstalledPrograms
 SetPowerPlanToHighPerformance
 
+MySetIPAddress
+
 ### Auxiliary Functions ###
 WaitForKey
 #Restart
