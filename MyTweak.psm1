@@ -152,6 +152,11 @@ https://boxstarter.org
 	}
 }
 
+# Add User Administrator to Remote Desktop Group
+Function MyAddAdministratorToRemoteDesktop {
+	Write-Host "Adding Administrattor to RDP Group"
+	Add-LocalGroupMember -Group "Utenti desktop remoto" -Member "Administrator"
+}
 ##########
 
 # Set INFN Torino Wallpaper

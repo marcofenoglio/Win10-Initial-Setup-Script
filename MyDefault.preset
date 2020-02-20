@@ -222,6 +222,7 @@ MyUninstallThirdPartyBloatAllUsers
 MyUninstallHPPreinstalledPrograms
 SetPowerPlanToHighPerformance
 MyEnableRemoteDesktop
+MyAddAdministratorToRemoteDesktop
 SetINFNWallpaper
 
 ### Auxiliary Functions ###
