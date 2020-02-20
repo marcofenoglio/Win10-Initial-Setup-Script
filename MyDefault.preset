@@ -8,6 +8,8 @@
 ### Require administrator privileges ###
 RequireAdmin
 
+MySetIPAddress
+
 ### Privacy Tweaks ###
 #DisableTelemetry                # EnableTelemetry
 #DisableWiFiSense                # EnableWiFiSense
@@ -219,9 +221,7 @@ MyUninstallMsftBloatAllUsers
 MyUninstallThirdPartyBloatAllUsers
 MyUninstallHPPreinstalledPrograms
 SetPowerPlanToHighPerformance
-
-MySetIPAddress
-
+MyEnableRemoteDesktop
 SetINFNWallpaper
 
 ### Auxiliary Functions ###
