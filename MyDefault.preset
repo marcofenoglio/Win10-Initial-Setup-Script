@@ -222,6 +222,8 @@ SetPowerPlanToHighPerformance
 
 MySetIPAddress
 
+SetINFNWallpaper
+
 ### Auxiliary Functions ###
 WaitForKey
 #Restart

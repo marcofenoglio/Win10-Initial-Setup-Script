@@ -104,8 +104,10 @@ Function MyEnableShowRibbon {
 	Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Ribbon" MinimizedStateTabletModeOff 0
 }
 
+##########
+
 # Set INFN Torino Wallpaper
-function Set-Wallpaper {
+Function SetWallpaper {
 <#
 .SYNOPSIS
 Set desktop wallpaper.
@@ -175,10 +177,21 @@ End Function
 	  	Fit
 		{
 		  	Set-ItemProperty -Path 'HKCU:\Control Panel\Desktop\' -Name WallpaperStyle -Value 6
+			Write-Output "Fit Fit Fit"
 		}
 	  	Fill
 		{
 			Set-ItemProperty -Path 'HKCU:\Control Panel\Desktop\' -Name WallpaperStyle -Value 10
 	  	}
 	}	
+}
+
+function SetINFNWallpaper {
+	Write-Output "Setting INFN Wallpaper..."
+	$WPURI='https://www.to.infn.it/tosegr/INFN%20Torino%20Wallpaper.jpg'
+	$WPFILE='C:\Wallpaper.jpg'
+	$WPWebClient = New-Object System.Net.WebClient
+	$WPWebClient.DownloadFile($WPURI,$WPFILE)
+	SetWallpaper $WPFILE -Location Fit
+	Remove-Item $WPFILE
 }
