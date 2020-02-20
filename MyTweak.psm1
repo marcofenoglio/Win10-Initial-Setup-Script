@@ -225,7 +225,6 @@ End Function
 	  	Fit
 		{
 		  	Set-ItemProperty -Path 'HKCU:\Control Panel\Desktop\' -Name WallpaperStyle -Value 6
-			Write-Output "Fit Fit Fit"
 		}
 	  	Fill
 		{
