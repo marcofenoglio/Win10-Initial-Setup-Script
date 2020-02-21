@@ -72,7 +72,7 @@ Function MyUninstallHPPreinstalledPrograms {
 }
 
 # Set power plan to High Performance
-Function SetPowerPlanToHighPerformance {
+Function MySetPowerPlanToHighPerformance {
         Write-Output "Setting power plan to High Performance"
         PowerCfg -SetActive '8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c'
 }
@@ -160,7 +160,7 @@ Function MyAddAdministratorToRemoteDesktop {
 ##########
 
 # Set INFN Torino Wallpaper
-Function SetWallpaper {
+Function MySetWallpaper {
 <#
 .SYNOPSIS
 Set desktop wallpaper.
@@ -238,12 +238,24 @@ End Function
 	}	
 }
 
-Function SetINFNWallpaper {
+Function MySetINFNWallpaper {
 	Write-Output "Setting INFN Wallpaper..."
 	$WPURI='https://www.to.infn.it/tosegr/INFN%20Torino%20Wallpaper.jpg'
 	$WPFILE='C:\Wallpaper.jpg'
 	$WPWebClient = New-Object System.Net.WebClient
 	$WPWebClient.DownloadFile($WPURI,$WPFILE)
-	SetWallpaper $WPFILE -Location Fit
+	MySetWallpaper $WPFILE -Location Fit
 	Remove-Item $WPFILE
+}
+
+# Add INFN CA Certificate to Root
+Function MyAddINFNCACertificate {
+	Write-Output "Adding INFN CA Certificate..."
+	$CAURI='https://www.to.infn.it/tosegr/INFN_CA.cer'
+	$CAFILE='C:\INFN_CA.cer'
+	$CAWebClient = New-Object System.Net.WebClient
+	$CAWebClient.DownloadFile($CAURI,$CAFILE)
+	certutil -addstore -f "Root" $CAFILE
+#	Import-Certificate -FilePath $CAFILE -CertStoreLocation Cert:\LocalMachine\Root
+	Remove-Item $CAFILE
 }

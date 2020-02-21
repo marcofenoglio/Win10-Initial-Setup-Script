@@ -220,10 +220,10 @@ UnpinTaskbarIcons
 MyUninstallMsftBloatAllUsers
 MyUninstallThirdPartyBloatAllUsers
 MyUninstallHPPreinstalledPrograms
-SetPowerPlanToHighPerformance
+MySetPowerPlanToHighPerformance
 MyEnableRemoteDesktop
 MyAddAdministratorToRemoteDesktop
-SetINFNWallpaper
+MySetINFNWallpaper
 
 ### Auxiliary Functions ###
 WaitForKey
