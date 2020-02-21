@@ -8,7 +8,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object
 
 choco feature enable --name allowGlobalConfirmation
 
-Write-Output "Installo i programmi" -ForegroundColor red -BackgroundColor white
+Write-Host "Installo i programmi" -ForegroundColor red -BackgroundColor white
 
 $WebClient = New-Object System.Net.WebClient
 $WebClient.DownloadFile("https://www.to.infn.it/tosegr/Configurazione-W-X-P-N.xml","C:\Configurazione-W-X-P-N.xml")
