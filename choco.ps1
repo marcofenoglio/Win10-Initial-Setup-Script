@@ -17,10 +17,13 @@ Remove-Item C:\Configurazione-W-X-P-N.xml
 
 choco install thunderbird
 choco install firefoxesr
+choco pin add -n=firefoxesr
 choco install flashplayerplugin
+choco install microsoft-edge
 choco install skype
 choco install 7zip.install
 choco install jre8  -PackageParameters "/exclude:32"
+choco pin add -n=jre8
 choco install irfanview --params '/assoc=1 /group=1 /ini=%APPDATA%\IrfanView'
 choco install irfanviewplugins
 choco install vlc
