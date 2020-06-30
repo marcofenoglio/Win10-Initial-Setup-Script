@@ -80,6 +80,8 @@ Function MyUninstallLenovoTB15PreinstalledPrograms {
 	$MyApp.Uninstall()
 	$MyApp = Get-WmiObject -Class Win32_Product | Where-Object{$_.Name -eq "Office 16 Click-to-Run Licensing Component"}
 	$MyApp.Uninstall()
+	$MyApp = Get-WmiObject -Class Win32_Product | Where-Object{$_.IdentifyingNumber -match "9AC08E99-230B-47e8-9721-4577B7F124EA"}
+	$MyApp.Uninstall()
 }
 
 # Set power plan to High Performance
