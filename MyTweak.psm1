@@ -71,6 +71,17 @@ Function MyUninstallHPPreinstalledPrograms {
 	$MyApp.Uninstall()
 }
 
+# My Uninstall Lenovo TB15 Preinstalled Programs
+Function MyUninstallLenovoTB15PreinstalledPrograms {
+	Write-Output "Uninstalling Lenovo TB15 Preinstalled Programs..."
+	$MyApp = Get-WmiObject -Class Win32_Product | Where-Object{$_.Name -eq "Office 16 Click-to-Run Extensibility Component"}
+	$MyApp.Uninstall()
+	$MyApp = Get-WmiObject -Class Win32_Product | Where-Object{$_.Name -eq "Office 16 Click-to-Run Localization Component"}
+	$MyApp.Uninstall()
+	$MyApp = Get-WmiObject -Class Win32_Product | Where-Object{$_.Name -eq "Office 16 Click-to-Run Licensing Component"}
+	$MyApp.Uninstall()
+}
+
 # Set power plan to High Performance
 Function MySetPowerPlanToHighPerformance {
         Write-Output "Setting power plan to High Performance"
@@ -84,6 +95,21 @@ Function MySetIPAddress {
 	if ($IP -ne '') {
 	    New-NetIPAddress -IPAddress 193.206.184.$IP -DefaultGateway 193.206.184.254 -PrefixLength 27 -InterfaceIndex (Get-NetAdapter).InterfaceIndex
 	    Set-DNSClientServerAddress -InterfaceIndex (Get-NetAdapter).InterfaceIndex -ServerAddresses ("192.84.137.2","192.84.137.1")
+	}
+	Start-Sleep -Seconds 15
+	nslookup www.to.infn.it
+	$connected = Read-Host "In rete? [s|n]"
+	if ($connected -ne "s") {
+	    Start-Sleep -Seconds 15
+	}
+}
+
+Function MySetSagIPAddress {
+	Write-Output "Configura la scheda di rete" -ForegroundColor red -BackgroundColor white
+	$IP = Read-Host "Indicare la parte finale dell'IP da assegnare alla rete 10.10.10.*/27?"
+	if ($IP -ne '') {
+	    New-NetIPAddress -IPAddress 10.10.10.$IP -DefaultGateway 10.10.10.1 -PrefixLength 27 -InterfaceIndex (Get-NetAdapter).InterfaceIndex
+	    Set-DNSClientServerAddress -InterfaceIndex (Get-NetAdapter).InterfaceIndex -ServerAddresses ("1.1.1.1","1.0.0.1")
 	}
 	Start-Sleep -Seconds 15
 	nslookup www.to.infn.it
