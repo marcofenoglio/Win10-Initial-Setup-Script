@@ -11,9 +11,9 @@ choco feature enable --name allowGlobalConfirmation
 Write-Host "Installo i programmi" -ForegroundColor red -BackgroundColor white
 
 $WebClient = New-Object System.Net.WebClient
-$WebClient.DownloadFile("https://www.to.infn.it/tosegr/Configurazione-W-X-P-N.xml","C:\Configurazione-W-X-P-N.xml")
-choco install office365proplus --params '/ConfigPath:C:\Configurazione-W-X-P-N.xml'
-Remove-Item C:\Configurazione-W-X-P-N.xml
+$WebClient.DownloadFile("https://www.to.infn.it/tosegr/Configurazione-W-X-P-N-T.xml","C:\Configurazione-W-X-P-N-T.xml")
+choco install office365proplus --params '/ConfigPath:C:\Configurazione-W-X-P-N-T.xml'
+Remove-Item C:\Configurazione-W-X-P-N-T.xml
 
 choco install thunderbird
 choco install firefoxesr
