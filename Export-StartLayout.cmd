@@ -1,0 +1,1 @@
+Export-StartLayout -Path $ENV:LOCALAPPDATA\Microsoft\Windows\Shell\LayoutModification.xml
