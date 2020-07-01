@@ -8,7 +8,7 @@
 ### Require administrator privileges ###
 RequireAdmin
 
-MySetSagIPAddress
+#MySetSagIPAddress
 
 ### Privacy Tweaks ###
 #DisableTelemetry                # EnableTelemetry
