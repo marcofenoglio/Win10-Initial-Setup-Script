@@ -27,6 +27,7 @@ choco pin add -n=jre8
 choco install irfanview --params '/assoc=1 /group=1 /ini=%APPDATA%\IrfanView'
 choco install irfanviewplugins
 choco install vlc
+choco install choco-upgrade-all-at --params "'/WEEKLY:yes /DAY:MON /TIME:13:00'"
 
 $confirmation = Read-Host "Vuoi installare GIMP? [s/n]"
 if ($confirmation -eq 's') {
