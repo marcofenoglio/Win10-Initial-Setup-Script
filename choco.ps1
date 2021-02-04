@@ -15,19 +15,19 @@ $WebClient.DownloadFile("https://www.to.infn.it/tosegr/Configurazione-W-X-P-N-T.
 choco install office365proplus --params '/ConfigPath:C:\Configurazione-W-X-P-N-T.xml'
 Remove-Item C:\Configurazione-W-X-P-N-T.xml
 
+choco feature enable -n=useRememberedArgumentsForUpgrades
 choco install thunderbird
 choco install firefoxesr
-choco pin add -n=firefoxesr
-choco install flashplayerplugin
+#choco pin add -n=firefoxesr
 choco install microsoft-edge
 choco install skype
 choco install 7zip.install
 choco install jre8  -PackageParameters "/exclude:32"
-choco pin add -n=jre8
+#choco pin add -n=jre8
 choco install irfanview --params '/assoc=1 /group=1 /ini=%APPDATA%\IrfanView'
 choco install irfanviewplugins
 choco install vlc
-choco install choco-upgrade-all-at --params "'/WEEKLY:yes /DAY:MON /TIME:13:00'"
+choco install choco-upgrade-all-at --params "'/DAILY:yes /TIME:06:00 /ABORTTIME:07:30'"
 
 $confirmation = Read-Host "Vuoi installare GIMP? [s/n]"
 if ($confirmation -eq 's') {
